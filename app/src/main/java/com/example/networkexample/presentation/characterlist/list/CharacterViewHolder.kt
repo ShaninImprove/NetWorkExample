@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.networkexample.R
 import com.example.networkexample.domain.model.Character
 
-class CharacterViewHolder(rootView: View) : RecyclerView.ViewHolder(rootView) {
+class CharacterViewHolder(
+    rootView: View,
+    private val onClick: (characterId: Int) -> Unit
+) : RecyclerView.ViewHolder(rootView) {
 
     private lateinit var textViewId: TextView
     private lateinit var textViewName: TextView
@@ -17,5 +20,7 @@ class CharacterViewHolder(rootView: View) : RecyclerView.ViewHolder(rootView) {
 
         textViewId.text = character.id.toString()
         textViewName.text = character.name
+
+        itemView.setOnClickListener { onClick(character.id) }
     }
 }

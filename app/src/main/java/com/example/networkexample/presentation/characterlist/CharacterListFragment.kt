@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.networkexample.R
 import com.example.networkexample.domain.model.Character
+import com.example.networkexample.presentation.MainActivity
 import com.example.networkexample.presentation.characterlist.list.CharacterListAdapter
 import com.google.android.material.progressindicator.LinearProgressIndicator
 
@@ -28,7 +29,9 @@ class CharacterListFragment : Fragment(R.layout.fragment_character_list), Charac
     }
 
     override fun setupItemList(list: List<Character>) {
-        val adapter = CharacterListAdapter(list)
+        val adapter = CharacterListAdapter(list) {
+            (requireActivity() as MainActivity).openCharacterScreen(it)
+        }
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val decorator = DividerItemDecoration(
             requireContext(),
