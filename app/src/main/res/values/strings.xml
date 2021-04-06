@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NetWorkExample</string>
+
+    <string name="list_screen_title">Characters List</string>
+    <string name="id_label">ID:</string>
+    <string name="name_label">Name:</string>
 </resources>
