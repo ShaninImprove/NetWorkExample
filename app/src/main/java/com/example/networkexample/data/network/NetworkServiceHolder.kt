@@ -2,9 +2,8 @@ package com.example.networkexample.data.network
 
 import retrofit2.Retrofit
 
-class NetworkServiceHolder {
+object NetworkServiceHolder {
 
-    companion object {
         var retrofit: Retrofit? = null
         set(value) {
             retrofitService = value!!.create(StarWarsApiService::class.java)
@@ -12,5 +11,4 @@ class NetworkServiceHolder {
         }
 
         var retrofitService: StarWarsApiService? = null
-    }
 }

@@ -9,4 +9,6 @@ interface CharacterListView {
     fun setProgressVisible(isVisible: Boolean)
 
     fun openCharacterScreen(characterId: Int)
+
+    fun showSnackBar(text: String)
 }
