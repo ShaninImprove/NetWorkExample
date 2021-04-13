@@ -1,4 +1,4 @@
-package com.example.networkexample.data
+package com.example.networkexample.data.network
 
 import retrofit2.Retrofit
 

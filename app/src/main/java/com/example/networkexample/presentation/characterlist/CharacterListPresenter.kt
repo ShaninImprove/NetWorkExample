@@ -1,24 +1,18 @@
 package com.example.networkexample.presentation.characterlist
 
-import com.example.networkexample.data.NetworkServiceHolder
-import com.example.networkexample.domain.mappers.SimpleCharacterMapper
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.schedulers.Schedulers
+import com.example.networkexample.domain.usecase.GetCharactersUseCase
 
 class CharacterListPresenter constructor(private val view: CharacterListView) {
 
-    private val retrofitService = NetworkServiceHolder.retrofitService!!
+    private val getCharactersUseCase = GetCharactersUseCase()
+
+    fun onCharacterClicked(characterId: Int) {
+        view.openCharacterScreen(characterId)
+    }
 
     fun onViewCreated() {
         view.setProgressVisible(true)
-        retrofitService.getCharacters()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .map {
-                return@map it.results.map {
-                    SimpleCharacterMapper.mapApiToDomain(it)
-                }.toList()
-            }
+        getCharactersUseCase.execute()
             .subscribe(
                 {
                     view.setupItemList(it)

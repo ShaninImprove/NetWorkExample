@@ -30,7 +30,7 @@ class CharacterListFragment : Fragment(R.layout.fragment_character_list), Charac
 
     override fun setupItemList(list: List<Character>) {
         val adapter = CharacterListAdapter(list) {
-            (requireActivity() as MainActivity).openCharacterScreen(it)
+            presenter.onCharacterClicked(it)
         }
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         val decorator = DividerItemDecoration(
@@ -43,5 +43,9 @@ class CharacterListFragment : Fragment(R.layout.fragment_character_list), Charac
 
     override fun setProgressVisible(isVisible: Boolean) {
         progress.isVisible = isVisible
+    }
+
+    override fun openCharacterScreen(characterId: Int) {
+        (requireActivity() as MainActivity).openCharacterScreen(characterId)
     }
 }

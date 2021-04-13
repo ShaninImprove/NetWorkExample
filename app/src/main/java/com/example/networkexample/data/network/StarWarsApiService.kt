@@ -1,9 +1,9 @@
-package com.example.networkexample.data
+package com.example.networkexample.data.network
 
-import com.example.networkexample.data.model.CharacterApiModel
-import com.example.networkexample.data.model.ItemResponseApiModel
-import com.example.networkexample.data.model.ListResponseApiModel
-import com.example.networkexample.data.model.SimpleCharacterApiModel
+import com.example.networkexample.data.network.model.CharacterApiModel
+import com.example.networkexample.data.network.model.ItemResponseApiModel
+import com.example.networkexample.data.network.model.ListResponseApiModel
+import com.example.networkexample.data.network.model.SimpleCharacterApiModel
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Path

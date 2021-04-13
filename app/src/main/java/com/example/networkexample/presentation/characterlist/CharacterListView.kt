@@ -7,4 +7,6 @@ interface CharacterListView {
     fun setupItemList(list: List<Character>)
 
     fun setProgressVisible(isVisible: Boolean)
+
+    fun openCharacterScreen(characterId: Int)
 }

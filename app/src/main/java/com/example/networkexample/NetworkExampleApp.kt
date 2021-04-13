@@ -1,7 +1,7 @@
 package com.example.networkexample
 
 import android.app.Application
-import com.example.networkexample.data.NetworkServiceHolder
+import com.example.networkexample.data.network.NetworkServiceHolder
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
